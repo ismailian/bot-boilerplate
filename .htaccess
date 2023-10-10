@@ -1,0 +1,17 @@
+# Begin PHP_API_APP
+<IfModule mod_rewrite.c>
+
+    RewriteEngine on
+    RewriteBase /
+    Options -Indexes
+
+    # public resources:
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
+    RewriteRule ^ storage%{REQUEST_URI} [L]
+
+    # Rewrite rules:
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^ app.php [L,QSA]
+    
+</IfModule>
+# End PHP_API_APP
