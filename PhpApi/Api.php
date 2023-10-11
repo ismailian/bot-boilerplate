@@ -16,9 +16,9 @@ class Api
 
     /**
      * default constructor
-     * @param Array $options the options to use with the app, containing ['prefix', 'cors'].
+     * @param array|null $options
      */
-    public function __construct($options = null)
+    public function __construct(array $options = null)
     {
         if (!is_null($options)) {
 
@@ -27,8 +27,8 @@ class Api
                 $this->prefix = $options['prefix'];
 
             /** assign cors */
-            if (isset($options['Cors'])) {
-                $this->cors = $options['Cors'];
+            if (isset($options['cors'])) {
+                $this->cors = $options['cors'];
             }
         }
 

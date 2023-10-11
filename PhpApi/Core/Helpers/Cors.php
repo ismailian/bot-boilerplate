@@ -13,34 +13,34 @@ trait Cors
 {
 
     /**
-     * @var array $headers allowed origin
+     * @var string $headers allowed origin
      */
-    private $origin = '*';
+    private string $origin = '*';
 
     /**
      * @var array $headers allowed methods
      */
-    private $methods = ['*'];
+    private array $methods = ['*'];
 
     /**
      * @var array $headers allowed requests
      */
-    private $headers = ['*'];
+    private array $headers = ['*'];
 
     /**
      * @var bool $strict whether to block all other origins or not
      */
-    private $strict = false;
+    private bool $strict = false;
 
     /**
      * Set the cors for this resource.
      * 
      * @param array $options the cors properties. 
      */
-    public function cors(array $options)
+    public function cors(array $options): void
     {
         /** set options */
-        if (is_array($options) && !empty($options)) {
+        if (!empty($options)) {
 
             if (isset($options['origin'])) # set origin
                 $this->origin = $options['origin'];
