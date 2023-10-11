@@ -24,7 +24,7 @@ use PhpApi\Api;
 /** new Instance of Api App */
 $ApiApp = new Api($options = [
     'prefix' => '/api/v1',
-    'Cors' => [
+    'cors' => [
         'origin'  => '*',
         'methods' => ['*'],
         'headers' => ['*']
